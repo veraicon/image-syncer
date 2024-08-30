@@ -225,5 +225,7 @@ func manifestEqual(m1, m2 []byte) bool {
 		return false
 	}
 
-	return reflect.DeepEqual(a, b)
+	eq := reflect.DeepEqual(a, b)
+	fmt.Printf("==========manifest compare not equal:==============\n m1:%s \n m2:%s \n", string(m1), string(m2))
+	return eq
 }
