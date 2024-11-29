@@ -116,11 +116,11 @@ func (u *URLTask) generateSyncTasks(source *sync.ImageSource, destination *sync.
 		return nil, resultMsg, nil
 	}
 
-	if changed := destination.CheckManifestChanged(destManifestBytes, nil); !u.forceUpdate && !changed {
-		// do nothing if image is unchanged
-		resultMsg = "skip synchronization because destination image exists"
-		return nil, resultMsg, nil
-	}
+	//if changed := destination.CheckManifestChanged(destManifestBytes, nil); !u.forceUpdate && !changed {
+	//	// do nothing if image is unchanged
+	//	resultMsg = "skip synchronization because destination image exists"
+	//	return nil, resultMsg, nil
+	//}
 
 	destManifestTask := NewManifestTask(nil,
 		source, destination, nil, destManifestBytes, nil)
